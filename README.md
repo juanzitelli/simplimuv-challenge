@@ -19,7 +19,7 @@ Ensure you have the following installed on your local machine:
 
 #### How to set up a local mongodb database using Docker
 
-Before starting, ensure you have [Docker](https://www.docker.com/products/docker-desktop) installed and running on your machine. If not, you can download it from the official website.
+Before starting, ensure you have [Docker](https://www.docker.com/products/docker-desktop) installed and running on your machine. If not, you can download it from the official website. (Note: The project itself doesn't use docker)
 
 Follow these steps to set up a MongoDB instance:
 
@@ -48,4 +48,14 @@ To install dependencies for both the frontend and backend, navigate to each dire
 
 ```zsh
 pnpm install
+```
+
+s
+
+### Running the projects
+
+After the DB is populated with products, you should be able to run the dev command on each individual folder (frontend and backend):
+
+```zsh
+pnpm dev
 ```
