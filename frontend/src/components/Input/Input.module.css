@@ -1,0 +1,21 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.2rem;
+}
+
+.label:has(> .input[type="checkbox"]) {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.input {
+  padding: 0.2rem;
+  color: black;
+  border-radius: 5px;
+  border: none;
+}

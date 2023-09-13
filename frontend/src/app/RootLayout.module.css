@@ -1,0 +1,15 @@
+.footer {
+  display: grid;
+  min-height: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top-width: 2px;
+  padding: var(--main-padding);
+}
+
+.main {
+  padding: var(--main-padding);
+}
+
+.header {
+  width: 100%;
+}

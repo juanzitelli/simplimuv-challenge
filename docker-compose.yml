@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  db:
+    image: mongo
+    restart: always
+    environment:
+      MONGODB_DATABASE: simplimuv
+    ports:
+      - 27017:27017
+    volumes:
+      - simplimuv:/data/db
+  api:
+    build: ./backend
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+  web:
+    build: ./frontend
+    depends_on:
+      - api
+    ports:
+      - 4000:4000
+    environment:
+      NODE_ENV: development
+      API_URL: http://localhost:3000
+volumes:
+  simplimuv:

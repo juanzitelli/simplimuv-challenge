@@ -1,0 +1,50 @@
+.pagination-control {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 1rem;
+}
+
+.button-group {
+  margin: 0 10px;
+}
+
+.button,
+.current-page-indication {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  min-width: 80px;
+  min-height: 40px;
+  background-color: #e0e0e0;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer;
+  visibility: visible;
+}
+
+.button:hover {
+  background-color: #f0f0f0;
+}
+
+.button-disabled {
+  background-color: #ddd;
+  color: #bbb;
+  cursor: not-allowed;
+  visibility: hidden;
+}
+
+.current-page {
+  font-weight: bold;
+  background-color: #4b8df8;
+  color: #fff;
+}
+
+.current-page-indication {
+  font-size: 15px;
+  color: #666;
+}

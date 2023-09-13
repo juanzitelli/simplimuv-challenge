@@ -1,0 +1,41 @@
+.gridWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: max-content;
+}
+
+.imageStyle {
+  width: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
+.linkStyle {
+  border-radius: 0.5rem;
+  background-color: #4a5568;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.125rem;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .linkStyle {
+    min-height: min-content;
+    max-width: max-content;
+  }
+}
+
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+}
+.priceHeader {
+  font-weight: semibold;
+}
+.price {
+  font-size: x-large;
+  font-weight: bold;
+}
