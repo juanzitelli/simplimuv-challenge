@@ -32,7 +32,7 @@ export const Form = ({ product }: { product: Product }) => {
             type="checkbox"
             name="trade_in"
             id="trade_in"
-            checked={true}
+            defaultChecked={true}
           />
           <Input
             label="Interested in finance"

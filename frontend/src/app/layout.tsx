@@ -25,22 +25,26 @@ export default function RootLayout({
         </header>
         <main className={styles.main}>{children}</main>
         <footer className={styles.footer}>
-          <div>
+          <div className={styles.note}>
             Website created by @juanzitelli for SimpliMuv Full Stack challenge
           </div>
           <div>
             <nav>
-              <ul>
+              <ul className={styles["nav-ul"]}>
                 <li>
-                  <Link href={"https://simplimuv.com"}>SimpliMuv</Link>
+                  <Link href={"https://simplimuv.com"}>SimpliMuv 🌍</Link>
                 </li>
                 <li>
                   <Link href={"https://github.com/juanzitelli"}>
-                    @juanzitelli
+                    @juanzitelli 👨‍💻
                   </Link>
                 </li>
                 <li>
-                  <Link href={"https://simplimuv.com"}>Repository</Link>
+                  <Link
+                    href={"https://github.com/juanzitelli/simplimuv-challenge/"}
+                  >
+                    Repository 📦
+                  </Link>
                 </li>
               </ul>
             </nav>

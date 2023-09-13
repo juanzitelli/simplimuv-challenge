@@ -1,4 +1,4 @@
-import { IsEmail, IsIn, IsMongoId, IsNotEmpty } from "class-validator";
+import { IsBoolean, IsEmail, IsMongoId, IsNotEmpty } from "class-validator";
 
 export class CreateLeadDto {
   @IsNotEmpty()
@@ -14,11 +14,13 @@ export class CreateLeadDto {
   @IsNotEmpty()
   phone: string;
 
-  @IsIn(["on", "off"])
-  interested_in_finance: string;
+  // @IsIn(["on", "off"])
+  @IsBoolean()
+  interested_in_finance: boolean;
 
-  @IsIn(["on", "off"])
-  trade_in: string;
+  // @IsIn(["on", "off"])
+  @IsBoolean()
+  trade_in: boolean;
 
   @IsNotEmpty()
   @IsMongoId()

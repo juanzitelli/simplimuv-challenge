@@ -30,16 +30,20 @@ const ProductsPage = async ({
     <>
       <h1>Products page</h1>
       <div className={styles.container}>
-        {data.products.map((product: Product, key: number) => {
-          return (
-            <ProductCard
-              data-testid={key}
-              data-productid={key}
-              key={product._id}
-              product={product}
-            />
-          );
-        })}
+        {data.products.length > 0 ? (
+          data.products.map((product: Product, key: number) => {
+            return (
+              <ProductCard
+                data-testid={key}
+                data-productid={key}
+                key={product._id}
+                product={product}
+              />
+            );
+          })
+        ) : (
+          <div>There are no products we can show you at the moment</div>
+        )}
       </div>
       <Paginator
         currentPage={data.currentPage}

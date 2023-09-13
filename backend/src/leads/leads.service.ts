@@ -21,9 +21,8 @@ export class LeadsService {
       newLead.email = createLeadDto.email;
       newLead.first_name = createLeadDto.first_name;
       newLead.last_name = createLeadDto.email;
-      newLead.interested_in_finance =
-        createLeadDto.interested_in_finance === "on";
-      newLead.trade_in = createLeadDto.trade_in === "on";
+      newLead.interested_in_finance = createLeadDto.interested_in_finance;
+      newLead.trade_in = createLeadDto.trade_in;
       newLead.phone = createLeadDto.phone;
 
       const product = await this.productsRepository.findOne({

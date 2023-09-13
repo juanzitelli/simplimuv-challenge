@@ -2,13 +2,12 @@
 
 import { redirect } from "next/navigation";
 import {
-  object,
-  string,
-  minLength,
+  boolean,
   email,
+  minLength,
   nullable,
-  enumType,
-  length,
+  object,
+  string
 } from "valibot";
 
 const LeadSchema = object({
@@ -20,19 +19,22 @@ const LeadSchema = object({
   ]),
   email: string([email()]),
   phone: string(),
-  interested_in_finance: nullable(enumType(["on", "off"])),
-  trade_in: nullable(enumType(["on", "off"])),
-  productId: string([length(24, "Product ID should be 24 chars long")]),
+  interested_in_finance: nullable(boolean()),
+  trade_in: nullable(boolean()),
+  productId: string(),
 });
 
 export async function postLead(formData: FormData) {
+  const interestedInFinance = formData.get("interested_in_finance") === "on";
+  const tradeIn = formData.get("trade_in") === "on";
+
   const form = {
     first_name: formData.get("first_name"),
     last_name: formData.get("last_name"),
     email: formData.get("email"),
     phone: formData.get("phone"),
-    interested_in_finance: formData.get("interested_in_finance"),
-    trade_in: formData.get("trade_in"),
+    interested_in_finance: interestedInFinance,
+    trade_in: tradeIn,
     productId: formData.get("productId"),
   };
 
