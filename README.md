@@ -29,14 +29,14 @@ Follow these steps to set up a MongoDB instance:
 docker pull mongo
 ```
 
-1. Run the MongoDB image as a container. This command will start a MongoDB instance with the name 'my-mongo', the port 27017 exposed and the authentication mechanism disabled. Replace 'my-mongo' with the desired name for your database.
+2. Run the MongoDB image as a container. This command will start a MongoDB instance with the name 'my-mongo', the port 27017 exposed and the authentication mechanism disabled. Replace 'my-mongo' with the desired name for your database.
 
 ```zsh
 docker run --name my-mongo -p 27017:27017 -d mongo
 ```
 
-Now, you should have a MongoDB instance running on your local machine at [http://localhost:27017](http://localhost:27017).
-You can interact with your MongoDB instance using a MongoDB client like MongoDB Compass. Set the hostname to localhost and the port to 27017 to establish a connection.
+3. Now, you should have a MongoDB instance running on your local machine at [http://localhost:27017](http://localhost:27017).
+   You can interact with your MongoDB instance using a MongoDB client like MongoDB Compass. Set the hostname to localhost and the port to 27017 to establish a connection.
 
 Import the `products.json` data to a new MongoDB database called `simplimuv`. This can be achieved through the API when it's up and running.
 
@@ -49,8 +49,6 @@ To install dependencies for both the frontend and backend, navigate to each dire
 ```zsh
 pnpm install
 ```
-
-s
 
 ### Running the projects
 
