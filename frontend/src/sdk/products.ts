@@ -8,7 +8,7 @@ type FindAllPaginatedProductsResponse = {
 } & {};
 
 export const findAllPaginatedProducts = async (
-  params: URLSearchParams,
+  params: URLSearchParams
 ): Promise<FindAllPaginatedProductsResponse> => {
   const res = await fetch(`${BASE_URL}?${params.toString()}`);
   const data = (await res.json()) as FindAllPaginatedProductsResponse;

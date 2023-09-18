@@ -1,6 +1,6 @@
-import { findAllPaginatedProducts } from "@/sdk/products";
 import { Paginator } from "@/components/Paginator/Paginator";
 import { ProductCard } from "@/components/ProductCard/ProductCard";
+import { findAllPaginatedProducts } from "@/sdk/products";
 import styles from "./ProductsPage.module.css";
 
 export const dynamic = "force-dynamic";
@@ -32,7 +32,7 @@ const ProductsPage = async ({
     <>
       <h1>Products page</h1>
       <div className={styles.container}>
-        {data.products.length > 0 ? (
+        {data.products?.length > 0 ? (
           data.products.map((product: Product, key: number) => {
             return (
               <ProductCard
