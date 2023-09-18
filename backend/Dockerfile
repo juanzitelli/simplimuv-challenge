@@ -20,7 +20,7 @@ COPY . .
 # Copy node_modules from the "dependencies" stage to the current stage
 COPY --from=dependencies /app/node_modules ./node_modules
 
-# RUN pnpm build
+RUN pnpm build
 RUN pnpm prune --prod
 
 # Create the final docker image for deployment

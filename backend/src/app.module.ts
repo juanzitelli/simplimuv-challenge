@@ -12,10 +12,7 @@ import { ProductsModule } from "./products/products.module";
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: "mongodb",
-      // url: "mongodb://db:27017",
-      host: "localhost",
-      port: 27017,
-      database: "simplimuv",
+      url: process.env.DATABASE_URL,
       entities: [join(__dirname + "/**/*.entity.ts")],
       ssl: false,
       useUnifiedTopology: true,

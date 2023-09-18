@@ -8,7 +8,8 @@ WORKDIR /app
 
 # Install dependencies based on the preferred package manager
 COPY package.json pnpm-lock.yaml* ./
-RUN npm i -g pnpm && pnpm i
+RUN npm i -g pnpm
+RUN pnpm i
 
 
 # Rebuild the source code only when needed
@@ -21,7 +22,7 @@ COPY . .
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
-
+RUN npm i -g pnpm
 RUN pnpm build
 
 # If using npm comment out above and use below instead
@@ -54,6 +55,7 @@ USER nextjs
 EXPOSE 4000
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV PORT 4000
+
 # set hostname to localhost
 ENV HOSTNAME "0.0.0.0"
 

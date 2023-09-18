@@ -4,6 +4,8 @@ import styles from "./SingleProductPage.module.css";
 import { findProductById } from "@/sdk/products";
 import { Button } from "@/components/Button/Button";
 
+export const dynamic = "force-dynamic";
+
 const SingleProductPage = async ({ params }: { params: { id: string } }) => {
   const product = await findProductById(params.id);
 

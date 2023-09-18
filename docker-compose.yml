@@ -3,26 +3,37 @@ services:
   db:
     image: mongo
     restart: always
-    environment:
-      MONGODB_DATABASE: simplimuv
     ports:
-      - 27017:27017
+      - "27017:27017"
     volumes:
       - simplimuv:/data/db
+    environment:
+      - MONGODB_DATABASE=simplimuv
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=example
+
   api:
-    build: ./backend
     depends_on:
+      db:
+        condition: service_started
+    build: ./backend
+    links:
       - db
     ports:
-      - 3000:3000
+      - "3000:3000"
+
   web:
-    build: ./frontend
     depends_on:
+      api:
+        condition: service_started
+    build: ./frontend
+    links:
       - api
     ports:
-      - 4000:4000
+      - "4000:4000"
     environment:
       NODE_ENV: development
-      API_URL: http://localhost:3000
+      API_URL: http://api:3000
+
 volumes:
   simplimuv:

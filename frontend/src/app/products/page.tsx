@@ -3,6 +3,8 @@ import { Paginator } from "@/components/Paginator/Paginator";
 import { ProductCard } from "@/components/ProductCard/ProductCard";
 import styles from "./ProductsPage.module.css";
 
+export const dynamic = "force-dynamic";
+
 type Product = {
   _id: string;
   image: string;

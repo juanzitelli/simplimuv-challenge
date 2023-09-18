@@ -9,8 +9,8 @@ export const Paginator = ({
   pageSize,
   type,
 }: {
-  prevPage: number;
-  nextPage: number;
+  prevPage: number | null;
+  nextPage: number | null;
   currentPage: number;
   pageSize: string;
   type: string;
